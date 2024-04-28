@@ -1,8 +1,8 @@
 import { useState } from "react"
 
 function App() {
-  const [average, setAverage] = useState(0)
-  const [midterm, setMidterm] = useState(0)
+  const [average, setAverage] = useState(NaN)
+  const [midterm, setMidterm] = useState(NaN)
   return (
     <div className="p-12 w-screen h-screen text-white bg-slate-800">
       <h1 className="w-full text-xl font-bold text-center">CSE 360 Final Exam Grade Calculator</h1>
@@ -26,7 +26,7 @@ function App() {
 export default App
 
 function Display({ midterm, average }: { average: number, midterm: number }) {
-  if (Number.isNaN(midterm) || Number.isNaN(average)) {
+  if (Number.isNaN(midterm) || Number.isNaN(average) || (average < 0 || average > 100) || (midterm < 0 || midterm > 50)) {
     return <div className="text-red-500">Invalid Input</div>
   }
   return (
