@@ -10,11 +10,11 @@ function App() {
         <label >
           Enter current Average:
         </label>
-        <input type="text" className="text-black" onChange={({ target }) => { setAverage(Number.parseFloat(target.value)) }} placeholder="Ex. if 84% enter 84" />
+        <input type="text" className="pl-2 text-black rounded-full" onChange={({ target }) => { setAverage(Number.parseFloat(target.value)) }} placeholder="Ex. if 84% enter 84" />
         <label >
           Enter midterm raw score:
         </label>
-        <input type="text" className="text-black" onChange={({ target }) => { setMidterm(Number.parseFloat(target.value)) }} placeholder="Ex. if 33.5/50 enter 33.5" />
+        <input type="text" className="pl-2 text-black rounded-full" onChange={({ target }) => { setMidterm(Number.parseFloat(target.value)) }} placeholder="Ex. if 33.5/50 enter 33.5" />
         <div>
           <Display key={midterm + average} average={average} midterm={midterm} />
         </div>
