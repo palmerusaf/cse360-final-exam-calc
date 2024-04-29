@@ -16,7 +16,7 @@ function App() {
         </label>
         <input type="text" className="text-black" onChange={({ target }) => { setMidterm(Number.parseFloat(target.value)) }} placeholder="Ex. if 33.5/50 enter 33.5" />
         <div>
-          <Display average={average} midterm={midterm} />
+          <Display key={midterm + average} average={average} midterm={midterm} />
         </div>
       </div>
     </div>
@@ -27,10 +27,10 @@ export default App
 
 function Display({ midterm, average }: { average: number, midterm: number }) {
   if (Number.isNaN(midterm) || Number.isNaN(average) || (average < 0 || average > 100) || (midterm < 0 || midterm > 50)) {
-    return <div className="text-red-500">Invalid Input</div>
+    return <div className="text-red-500 duration-500 ease-in-out animate-in slide-in-from-top fade-in">Invalid Input</div>
   }
   return (
-    <div>
+    <div className="duration-700 ease-in-out slide-out-to-left animate-in fade-in">
       <h2>Required Score:</h2>
       <div>C: {reqScore(70)}</div>
       <div>C+: {reqScore(77)}</div>
