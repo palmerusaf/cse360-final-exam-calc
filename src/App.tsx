@@ -46,7 +46,8 @@ function App() {
         final -= .5
       }
       const minusExams = average - 30 * (midterm / 50)
-      return Math.ceil((((final - minusExams) * 107) / 30) - midterm) + "/57";
+      const rawFinalScore = Math.ceil((((final - minusExams) * 107) / 30) - midterm)
+      return `${rawFinalScore}/57 or ${Math.ceil(rawFinalScore / 57 * 100)}%`;
     }
   }
 }
