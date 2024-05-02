@@ -42,6 +42,6 @@ function Display({ midterm, average }: { average: number, midterm: number }) {
   )
   function reqScore(final: number) {
     const minusExams = average - 30 * (midterm / 50)
-    return Math.ceil((((final - minusExams) / 15) - (midterm / 50)) * 100) + "%";
+    return Math.ceil((((final - minusExams) * 107) / 30) - midterm) + "/57";
   }
 }
